@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:#36454f;
+        color:white;
+    }
+    .btn {
+ 
+  transition: 1s;
+}
+td{
+  max-width:200px;
+  
+  overflow:auto;
+}
+.btn:hover {opacity: 1 ;border-radius:20px;}
+ 
+ .input{
+    background: transparent;
+  border-bottom: 1px solid white;
+    transition: 1s;
+    color:white;
+
+ }
+.menuitem{
+    transition: 1s;
+}
+.menuitem:hover{
+    background-color: rosybrown;
+    color:whte;
+    border-radius: 5px;
+}
+ .input:hover{
+   border-radius:20px;
+   color:white;
+   background-color: #1a66ff;
+ }
+      #signin{
+        display:none;
+      }
+    .button{
+        background-color: tomato;
+        color:white;
+        transition:1s;
+    }
+    .button:hover{
+        background-color: thistle;
+        color:purple;
+        border-radius: 5px;;
+    }
+</style>
+<body>
+    
+ <div width="100%" style="text-align:center;"> 
+        
+            <h2 class="navbar-brand" href="#" style=" text-align:center;color:white; font-family: 'Sofia';font-size: 52px;"> Scratchnest Work</h2><br>
+            
+            <h4 class="navbar-brand" href="#" style=" text-align:center;color:white; font-family: 'Sofia';font-size: 24px;"> By Arun Sharma</h2>
+            
+        </div>
+        
+  
+    
+  <hr>
+  
+  
+
+
+
+
+
+
+
+
+
+        
+<div class="container" style="margin-top:5%;margin-bottom:20%;">
+       
+    <table class="table table-striped" style="color:white;border-spacing: 4px;">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Date</th>
+          <th>Info</th>
+          <th>Status</th>
+                 </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0;i<datas.length;i++) { %>
+       <tr>
+            <td><%= datas[i].task %></td>
+            <td><%= datas[i].date %></td>
+            <td><%= datas[i].info %></td>
+
+          <%  if(datas[i].status!=="Completed"){ %>
+            <td>   <span class="badge badge-danger" style="font-size: 15px;"><%= datas[i].status %></span></td>
+         <% } %>
+
+         <%  if(datas[i].status!=="incomplete"){ %>
+            <td>   <span class="badge badge-success" style="font-size: 15px;"><%= datas[i].status %></span></td>
+         <% } %>
+       </tr>
+         <% } %>
+        
+      </tbody>
+    </table>
+  </div>
+  
+</body>
+</html>
